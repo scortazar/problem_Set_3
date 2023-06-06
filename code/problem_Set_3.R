@@ -1,12 +1,12 @@
-#===================================================#
-#                                                   #
-#   Simon Cortazar Alba - 202020930 - Version 4.2.1 #
-#   Isabella Cruz -   202011925                     #
-#   Juan Sebastián Muñoz -  202021633               #
-#                                                   #
-#                 Problem set 3 - R                 #     
-#                                                   #
-#===================================================#
+#=====================================================#
+#                                                     #
+#   Simon Cortazar Alba - 202020930 - Version 4.2.1   #
+#   Isabella Cruz -   202011925 - Version 4.2.2       #
+#   Juan Sebastián Muñoz -  202021633 - Version 4.2.2 #
+#                                                     #
+#                 Problem set 3 - R                   #     
+#                                                     #
+#=====================================================#
 
 # Nota: Para que el script corra de manera ininterrumpida con un solo run hace falta dirigirse al punto dos del taller y no instalar
 # html tools. Aquí se hizo porque hacía falta su versión más reciente. Por tanto, si ya está actualizada, se puede borrar el comando
@@ -23,9 +23,10 @@ p_load(tidyverse, rio,
       margins,  
       estimatr,                            # Descargamos las librerias necesarias para desarrolalr el primer punto del taller
       lmtest, 
-      fixest, 
-      modelsummary, 
-      stargazer)
+      fixest,           #Usamos fixest para tener disponibles funciones que 
+      modelsummary,     #que nos permitan hacer estimaciones con múltiples efectos fijos
+      stargazer)       #Usamos stargazer para imprimir las tablas
+                       #de los modelos que vamos a usar para las estimaciones 
 
 
 # 1. Regresiones
