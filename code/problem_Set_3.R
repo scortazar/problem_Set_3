@@ -148,10 +148,12 @@ p_load(tidyverse,rio,skimr,
        osmdata,
        dplyr) 
 # En este ejercicio, usaremos específicamente osmdata, pues permite usar la información de mapas "raster" en el formato OpenStreetMap. 
-#Para poder analizar este formato de información, se usa tmaptools, que es justamente una librería que aporta herramientas para procesar información geográfica.
-#También usamos leaflet, que permite crear mapas interactivos. Esto es justamente lo que buscamos con las líneas que corresponden al apartado 2.2.
-#Finalmente, se debe usar ggsn para poder añadir información visual relevante para los mapas, como escalas o símbolos para identificar el norte.
+# Igualmente, usamos ggmap para usar específicamente información espacial de GoogleMaps.
+# Para poder analizar este formato de información, se usa tmaptools, que es justamente una librería que aporta herramientas para procesar información espacial.
+# También usamos leaflet, que permite crear mapas interactivos. Esto es justamente lo que buscamos con las líneas que corresponden al apartado 2.2.
+# Finalmente, se debe usar ggsn para poder añadir información visual relevante para los mapas, como escalas o símbolos para identificar el norte.
 # Cabe mencionar que gran parte de las bibliotecas anteriormente discutidas requieren el uso de ggplot.
+# 
 
 # 2.1 Seleccione una ciudad de Colombia y descargue los restaurantes y parques.
 
