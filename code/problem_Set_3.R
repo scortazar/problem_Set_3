@@ -26,7 +26,7 @@ p_load(tidyverse, rio,
       fixest,           #Usamos fixest para tener disponibles funciones que 
       modelsummary,     #que nos permitan hacer estimaciones con múltiples efectos fijos
       stargazer)       #Usamos stargazer para imprimir las tablas
-                       #de los modelos que vamos a usar
+                       #de los modelos que vamos a usar para las estimaciones 
 
 
 # 1. Regresiones
