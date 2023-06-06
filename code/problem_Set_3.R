@@ -245,7 +245,7 @@ p_load(tidyverse,rio,skimr,
   mapa_completo # Aquí tenemos el mapa base sobre el cual trabajar e identificar el  restaurante, al dirección y los parques
   
 
-  mapa_lugar    <-  mapa_completo + # Al mapa anterior le añadimos lo sisguiente: 
+  mapa_lugar    <-  mapa_completo + # Al mapa anterior le añadimos lo siguiente: 
                     geom_sf(data=restaurant_sf, aes(fill="restaurant"), colour="blue", inherit.aes=F, size=0.5) + # Le añadimos los restaurantes como puntos
                     geom_sf(data=park_sf, aes(fill="park"),colour="light green", inherit.aes=F, size=5) + # Le añadimos los parques que se van a rellenar de verde. Esto ya que especificamos fill y 
                                                                                                           # la geometría del parque son polígonos y no puntos
@@ -272,7 +272,11 @@ p_load(tidyverse,rio,skimr,
      p_load(rvest,tidyverse, data.frame, rio,
             wesanderson, wordcloud)             # Llamamos los paquetes que vamos a utilizar
  
-  
+#Para este ejercicio específico, usamos rvest que permite obtener información de una página de internet y traerla a R. 
+#Para el lado estético, se usa wesanderson para obtener algunas paletas de color específicas,
+#También usamos wordcloud, que usamos para generar "nubes de palabras", wordclouds.
+     
+     
   # 3.1 Leemos el siguiente link
      
      url_1 <-  "https://es.wikipedia.org/wiki/Departamentos_de_Colombia" # Creamos un objeto que contenga el string de la página
