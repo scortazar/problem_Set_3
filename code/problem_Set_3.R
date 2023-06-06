@@ -147,6 +147,11 @@ p_load(tidyverse,rio,skimr,
        ggmap, 
        osmdata,
        dplyr) 
+# En este ejercicio, usaremos específicamente osmdata, pues permite usar la información de mapas "raster" en el formato OpenStreetMap. 
+#Para poder analizar este formato de información, se usa tmaptools, que es justamente una librería que aporta herramientas para procesar información geográfica.
+#También usamos leaflet, que permite crear mapas interactivos. Esto es justamente lo que buscamos con las líneas que corresponden al apartado 2.2.
+#Finalmente, se debe usar ggsn para poder añadir información visual relevante para los mapas, como escalas o símbolos para identificar el norte.
+# Cabe mencionar que gran parte de las bibliotecas anteriormente discutidas requieren el uso de ggplot.
 
 # 2.1 Seleccione una ciudad de Colombia y descargue los restaurantes y parques.
 
@@ -162,7 +167,7 @@ p_load(tidyverse,rio,skimr,
         add_osm_feature(key="amenity", value="restaurant") # Dentro del spacial box de Medellín buscamos el amenity de restaurante 
                                                            # usando la llave que encontramos antes.
   
-  osm_rest_sf <- osmdata_sf(osm_rest)     #  Editamos lo anterior par aobtener los resultados en forma de datos sf.
+  osm_rest_sf <- osmdata_sf(osm_rest)     #  Editamos lo anterior para obtener los resultados en forma de datos sf, usando la librería sf.
   
   
   restaurant_sf <- osm_rest_sf$osm_points %>% select(osm_id, amenity) %>% # Solamente seleccionamos la id de Open Street map de los restaurantes
@@ -193,13 +198,13 @@ p_load(tidyverse,rio,skimr,
   
   # 2.2 Visualizamos el punto que acabamos de hacer.
     
-  leaflet() %>% addTiles() %>% addPolygons(data=park_sf) # Para los parques // Visaulizamos los parques en OSM
+  leaflet() %>% addTiles() %>% addPolygons(data=park_sf) # Para los parques // Visaulizamos los parques en OSM. 
   
   leaflet() %>% addTiles() %>% addCircleMarkers(data=restaurant_sf , col="darkblue") # Para los restaurantes // Visaulizamos los restaurantes en OSM
   
   # 2.3 Geocodificamos una dirección del punto 2.1
   
-  direccion <- geocode_OSM("Calle 46 %23% 55-54, Medellín", as.sf = T) %>% # Sacamos los datos geoespaciales de una dirección cualquiera de medellín, como la altuitud y longitud
+  direccion <- geocode_OSM("Calle 46 %23% 55-54, Medellín", as.sf = T) %>% # Sacamos los datos geoespaciales de una dirección cualquiera de Medellín, como la altuitud y longitud
                                                                            #Es decir, las coordenadas.
                mutate(type="direccion") # Creamos una variable de identificación por el tipo de sitio, que más adelante serivrá para después crear el mapa.
   direccion
@@ -252,7 +257,7 @@ p_load(tidyverse,rio,skimr,
  
  # Exportamos el mapa
 
- ggsave("output/mapa_amenities.png") # Guardamos el mapa
+ ggsave("output/mapa_amenities.png") # Guardamos el mapa en la carpeta de outputs
 
  # ====================================================================================================== #
  
