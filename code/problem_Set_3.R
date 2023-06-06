@@ -2,9 +2,9 @@
 #                                                   #
 #   Simon Cortazar Alba - 202020930 - Version 4.2.1 #
 #   Isabella Cruz -   202011925                     #
-#   Juan Sebastian Muñoz -  202021633               #
+#   Juan Sebastián Muñoz -  202021633               #
 #                                                   #
-#                 Probles set 3 - R                 #     
+#                 Problem set 3 - R                 #     
 #                                                   #
 #===================================================#
 
